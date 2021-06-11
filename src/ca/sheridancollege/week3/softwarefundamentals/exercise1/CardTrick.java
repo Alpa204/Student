@@ -26,6 +26,8 @@ public class CardTrick {
             Card c = new Card();         
             c.setValue(random.nextInt(13));
             c.setSuit(Card.SUITS[random.nextInt(4)]);
+            magicHand[i] = c;
+            System.out.println(c.getValue() + " of " + c.getSuit().toString());
         }
         
         //inserted code to ask the user for Card value and suit, create their card
@@ -39,7 +41,21 @@ public class CardTrick {
         
         
         // and search magicHand here
-        //Then report the result here
+        Card user = new Card();
+        user.setValue(value);
+        user.setSuit(suit);
+        
+        for (int i=0;i<magicHand.length;i++) {
+            if (user.getValue()==magicHand[i].getValue() && user.getSuit().equalsIgnoreCase(magicHand[i].getSuit())) {
+                //Then report the result here
+                System.out.println("Congratulations!");
+                System.out.println("You are winning! Your lucky card was found");
+                return;
+            }
+            input.close();
+        }
+        System.out.println("You loose! Your lucky card was not found");
+        
     }
     
 }
