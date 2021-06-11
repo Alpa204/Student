@@ -28,13 +28,14 @@ public class CardTrick {
             c.setSuit(Card.SUITS[random.nextInt(4)]);
         }
         
-        //insert code to ask the user for Card value and suit, create their card
+        //inserted code to ask the user for Card value and suit, create their card
         System.out.println("Pick a suit from\n Hearts\n Diamonds\n Spades\n clubs");
         String suit = input.nextLine();
         
         System.out.println("Pick a value from 1 to 13");
         int value = input.nextInt();
-        
+        //Print the card which user has picked
+        System.out.println("You selected the " + suit + " from suits " + " and " + value + " from value. ");
         
         
         // and search magicHand here
